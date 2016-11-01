@@ -19,29 +19,26 @@
 
 package net.technicpack.minecraftcore.mojang.version.builder.retrievers;
 
-import net.technicpack.launchercore.install.verifiers.IFileVerifier;
-import net.technicpack.launchercore.install.verifiers.ValidJsonFileVerifier;
-import net.technicpack.minecraftcore.MojangUtils;
-import net.technicpack.minecraftcore.mojang.version.builder.MojangVersionRetriever;
-import net.technicpack.utilslib.ZipUtils;
-
 import java.io.File;
 import java.io.IOException;
 
+import net.technicpack.minecraftcore.mojang.version.builder.MojangVersionRetriever;
+import net.technicpack.utilslib.ZipUtils;
+
 public class ZipFileRetriever implements MojangVersionRetriever {
 
-    private File zip;
+	private File zip;
 
-    public ZipFileRetriever(File sourceZip) {
-        this.zip = sourceZip;
-    }
+	public ZipFileRetriever(File sourceZip) {
+		this.zip = sourceZip;
+	}
 
-    @Override
-    public void retrieveVersion(File target, String key) throws IOException, InterruptedException {
-        boolean didExtract = false;
+	@Override
+	public void retrieveVersion(File target, String key) throws IOException, InterruptedException {
+		boolean didExtract = false;
 
-        if (zip.exists()) {
-            ZipUtils.extractFile(zip, target.getParentFile(), target.getName());
-        }
-    }
+		if (zip.exists()) {
+			didExtract = ZipUtils.extractFile(zip, target.getParentFile(), target.getName());
+		}
+	}
 }

@@ -23,8 +23,6 @@ import net.technicpack.launchercore.install.InstallTasksQueue;
 import net.technicpack.launchercore.install.tasks.ListenerTask;
 import net.technicpack.launchercore.modpacks.ModpackModel;
 import net.technicpack.minecraftcore.MojangUtils;
-import net.technicpack.minecraftcore.mojang.auth.MojangUser;
-import net.technicpack.utilslib.ZipUtils;
 import net.technicpack.launchercore.install.verifiers.IFileVerifier;
 import net.technicpack.launchercore.install.verifiers.MD5FileVerifier;
 import net.technicpack.launchercore.install.verifiers.ValidZipFileVerifier;
